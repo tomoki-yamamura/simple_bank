@@ -41,57 +41,6 @@ func TestTransferTx(t *testing.T) {
 		err := <-errs
 		require.NoError(t, err)
 
-		// result := <-results
-		// require.NotEmpty(t, result)
-
-		// transfer := result.Transfer
-		// require.NotEmpty(t, transfer)
-		// require.Equal(t, account1.ID, transfer.FromAccountID)
-		// require.Equal(t, account2.ID, transfer.ToAccountID)
-		// require.Equal(t, amount, transfer.Amount)
-		// require.NotZero(t,transfer.ID)
-		// require.NotZero(t, transfer.CreatedAt)
-
-		// _, err = store.GetTransfer(context.Background(), transfer.ID)
-		// require.NoError(t, err)
-
-		// FromEntry := result.FromEntry
-		// require.NotEmpty(t, FromEntry)
-		// require.Equal(t, account1.ID, FromEntry.AccountID)
-		// require.Equal(t, -amount, FromEntry.Amount)
-		// require.NotZero(t, FromEntry.ID)
-		// require.NotZero(t, FromEntry.CreatedAt)
-
-		// _, err = store.GetEntry(context.Background(), FromEntry.ID)
-		// require.NoError(t, err)
-
-		// ToEntry := result.ToEntry
-		// require.NotEmpty(t, ToEntry)
-		// require.Equal(t, account2.ID, ToEntry.AccountID)
-		// require.Equal(t, amount, ToEntry.Amount)
-		// require.NotZero(t, ToEntry.ID)
-		// require.NotZero(t, ToEntry.CreatedAt)
-
-		// _, err = store.GetEntry(context.Background(), ToEntry.ID)
-		// require.NoError(t, err)
-
-		// fromAccount := result.FromAccount
-		// require.NotEmpty(t, fromAccount)
-		// require.Equal(t, account1.ID, fromAccount.ID)
-
-		// toAccount := result.ToAccount
-		// require.NotEmpty(t, toAccount)
-		// require.Equal(t, account2.ID, toAccount.ID)
-
-		// diff1 := account1.Balance - fromAccount.Balance
-		// diff2 := toAccount.Balance - account2.Balance
-		// require.Equal(t, diff1, diff2)
-		// require.True(t, diff1 > 0)
-		// require.True(t, diff1 % amount == 0)
-		// k := int(diff1 / amount)
-		// require.True(t, k >= 1 && k <= n)
-		// require.NotContains(t, existed, k)
-		// existed[k] = true
 	}
 	updatedAccount1, err := testQueries.GetAccount(context.Background(), account1.ID)
 	require.NoError(t, err)
