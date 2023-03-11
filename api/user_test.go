@@ -164,7 +164,7 @@ func TestCreateUserAPI(t *testing.T) {
 
 			// httptest.NewRequestは擬似的なHTTPのリクエストを作成できる。
 			// httptest.NewRecorderはhttp.ResponseWriterを満たす*httptest.ResponseRecorderオブジェクトを取得できる。 このオブジェクトを利用してHTTPハンドラーの戻り値を検証するテストコードを書ける。
-			server := NewServer(store)
+			server := newTestServer(t, store)
 			recorder := httptest.NewRecorder()
 
 			data, err := json.Marshal(testCase.body)

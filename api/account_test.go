@@ -86,7 +86,7 @@ func TestGetAccountAPI(t *testing.T) {
 			mockStore := mockdb.NewMockStore(ctrl)
 			testCase.buildStubs(mockStore)
 
-			server := NewServer(mockStore)
+			server := newTestServer(t, mockStore)
 			recorder := httptest.NewRecorder()
 			url := fmt.Sprintf("/accounts/%d", testCase.accountID)
 			request, err := http.NewRequest(http.MethodGet, url, nil)
