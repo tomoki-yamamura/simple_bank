@@ -2,7 +2,6 @@ package gapi
 
 import (
 	"fmt"
-
 	db "github.com/tomoki-yamamura/simple_bank/db/sqlc"
 	"github.com/tomoki-yamamura/simple_bank/pb"
 	"github.com/tomoki-yamamura/simple_bank/token"
@@ -16,7 +15,7 @@ type Server struct {
 	tokenMaker token.Maker
 }
 
-func NewGrpcServer(config util.Config, store db.Store) (*Server, error) {
+func NewServer(config util.Config, store db.Store) (*Server, error) {
 	tokenMaker, err := token.NewPasetoMaker(config.TokenSymetricKey)
 	if err != nil {
 		return nil, fmt.Errorf("cannot create token maker: %w", err)
